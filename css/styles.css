@@ -1,0 +1,152 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+/*---------------Barra de navegación y logo-----------------*/
+
+header{
+	text-align: center;
+	background-color: #f9faff;
+	height: 7em;
+	line-height: 7em;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+
+header #logo {
+	background: url('../img/logo.png') no-repeat;
+	width: 190px;
+	height: 85px;
+	font-size: 0;
+	display: inline-block;
+}
+
+nav {
+	position: fixed;
+	top: 1.3em;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#hamburguesa li {
+	text-indent: -100px;
+	overflow: hidden;
+	margin-top: .5em;
+	margin-left: .6em;
+	width: 2.5em;
+}
+
+#hamburguesa li a {
+	background: url('../img/menu.png') no-repeat center center;
+	background-size: cover;
+	display: block;
+	height: 2.5em;
+}
+
+#hamburguesa li:last-child a{
+	background: url('../img/menu-cerrar.png') no-repeat center center;
+}
+
+#hamburguesa li:last-child {
+	display: none;
+}
+
+nav:target #barra {
+	left: 0;
+}
+
+nav:target #hamburguesa li:first-child {
+	display: none;
+}
+
+nav:target #hamburguesa li:last-child {
+	display: block;
+}
+
+#barra {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 90px;
+	left: -100%;
+	background:#f9faff;
+	transition: left .5s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+}
+
+#barra li {
+	margin: 1em;
+	width: 80%;
+}
+
+#barra li a {
+	border-radius: 20px;
+	display: block;
+	background:  #064685;
+	color: #f9faff;
+	text-align: center;
+	line-height: 3.5em;
+}
+
+#banner{
+	position: relative;
+	top: 7em;
+	z-index: -1;
+}
+
+/*Para PC*/
+@media screen and (min-width:768px){
+	
+	/*------------Barra de navegación y logo-----------------*/
+	
+	#hamburguesa {
+		display: none;
+	}
+	header {
+		margin: 0 auto;
+		display: flex;
+	}
+	
+	#menu {
+		flex: 1;
+	}
+	#barra {
+		position: static;
+		height: auto;
+		background: none;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	#barra li {
+		display: block;
+		width: 100px;
+		margin: 0 .3em;
+		font-size: .9em;
+	}
+	#barra li a:hover {
+		background: rgb(95, 39, 146);
+	} 
+	
+	h1 {
+		position: relative;
+		top: 20px;
+	}
+	
+	main {
+		max-width: 1600px;
+		margin: 0 auto;
+		border: 2px solid #064685;
+		border-top: 0;
+		border-bottom: 0;
+	}
+}
